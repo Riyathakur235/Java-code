@@ -1,0 +1,85 @@
+/* h4{
+    background-color: rgb(204, 21, 167);
+} */
+ /* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#parent{
+    margin: 10px;
+    height: 300px;
+    width: 250px;
+    border-radius: 11px;
+    background-color: whitesmoke;
+    position: relative;
+}
+#child-b{
+  height: 50%;
+  width: 40%;
+  position: absolute;
+}
+#child-a{
+    height: 50%;
+    width: 100%;
+}
+#child-a img{
+    height: 100%;
+    width: 100%
+    border- radius 10px;
+}
+#child-b img{
+  height: 40%; */
+  /* width: 50%;
+ position: absolute;
+ bottom: 80px;
+ left: 60px;
+} 
+#child-b img{
+    border-radius: 50%;
+} */
+
+
+/* for flex property */
+ #parent {
+    border:2px solid red;
+    height: 500px;
+    width: 80vw;
+    margin: 50px auto;
+    display: flex;
+    /* align-items: center; */
+    /* align-items: end; */
+    justify-content: start;
+    /* flex-direction: column;
+    flex-direction:  row-reverse;
+     flex-direction: column-reverse; 
+    justify-content: center;
+    justify-content: end;
+    justify-content: baseline;*/
+    justify-content: space-around;
+    justify-content: space-between;
+    /* justify-content: space-evenly;
+    flex-wrap: wrap;  */
+}
+#parent div{
+    height: 100px;
+    width: 100px;
+}
+#one{
+    background-color:lightgreen;
+    /* flex-basis: 200px; 
+   flex-shrink: 2; */
+
+}
+#two{
+    background-color: blue;
+    flex-grow: 2;
+}
+#three{
+    background-color: gold;
+}
+#four{
+    background-color: rgb(226, 43, 110);
+} 
