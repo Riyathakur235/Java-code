@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+ import './App.css'
 // const Home =()=>{
 //     let {count,SetCount} = useState()
 //     //let data= new Data().toLocaleTimeString()
@@ -18,28 +18,55 @@ import React, { useEffect, useState } from "react"
 //     </div>
 // )
 // }
+// const Home =()=>{
+//     let[ApiData,SetApiData]=useState([])
+//     useEffect(()=>{
+//         fetch("https://jsonplaceholder.typicode.com/todos")
+//         .then((res)=>{
+//             return res.json()
+//         }).then((data)=>{
+//             console.log(data);
+//         })
+//     },[])
+//    return(
+//     <div>
+//         {
+//             ApiData.map((a)=>{
+//                 return(<>
+//                 <p>{a.id}</p>
+//                 <h2>{a.title}</h2>
+//                 </>)
+//             })
+//         }
+//     </div>
+//    ) 
+// }
+
+
 const Home =()=>{
-    let[ApiData,SetApiData]=useState([])
+    let[ApiData,SetData]=useState([])
     useEffect(()=>{
-        fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((res)=>{
-            return res.json()
-        }).then((data)=>{
-            console.log(data);
-        })
-    },[])
-   return(
-    <div>
-        {
-            ApiData.map((a)=>{
+    fetch("http://dummyjson.com/recipes").then((res)=>{
+        return res.json()
+    }).then((data)=>{
+        console.log(data.recipes);
+        SetData(data.recipes)
+    })
+},[])
+    return(
+     <div>
+         {
+           ApiData.map((a)=>{
                 return(<>
-                <p>{a.id}</p>
-                <h2>{a.title}</h2>
+               <div id="card">
+                <img src={a.img}></img>
+                <p>{a.name}</p>
+               </div>
                 </>)
-            })
-        }
-    </div>
-   ) 
+          })
+         }
+    </div> 
+    )
 }
 
 export default Home
