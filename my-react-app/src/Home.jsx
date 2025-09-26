@@ -53,6 +53,13 @@ const Home =()=>{
         SetData(data.recipes)
     })
 },[])
+ function deletee(id){
+  //  console.log(id);
+    let newArr=ApiData.filter((a,b)=>{
+        return b!=id
+    })
+    SetData(newArr)
+ }
     return(
      <div>
          {
@@ -61,6 +68,7 @@ const Home =()=>{
                <div id="card">
                 <img src={a.img}></img>
                 <p>{a.name}</p>
+                <button onClick={()=>deletee(Index)}>delete</button>
                </div>
                 </>)
           })
