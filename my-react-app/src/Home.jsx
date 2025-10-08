@@ -43,38 +43,3 @@ import React, { useEffect, useState } from "react"
 // }
 
 
-const Home =()=>{
-    let[ApiData,SetData]=useState([])
-    useEffect(()=>{
-    fetch("http://dummyjson.com/recipes").then((res)=>{
-        return res.json()
-    }).then((data)=>{
-        console.log(data.recipes);
-        SetData(data.recipes)
-    })
-},[])
- function deletee(id){
-  //  console.log(id);
-    let newArr=ApiData.filter((a,b)=>{
-        return b!=id
-    })
-    SetData(newArr)
- }
-    return(
-     <div>
-         {
-           ApiData.map((a)=>{
-                return(<>
-               <div id="card">
-                <img src={a.img}></img>
-                <p>{a.name}</p>
-                <button onClick={()=>deletee(Index)}>delete</button>
-               </div>
-                </>)
-          })
-         }
-    </div> 
-    )
-}
-
-export default Home

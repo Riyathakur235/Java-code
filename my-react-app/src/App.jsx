@@ -22,9 +22,25 @@ import Home from "./Home"
 //     )
 // }
 const App =()=>{
+    let [data,SetData]= useState({
+        name:"",
+        email:"",
+        passWord:""
+    })
+    function fun1(e){
+        let {name,value}=e.target 
+      SetInput({...input,[name]:value})
+      console.log(input);   
+     }
     return(
         <div>
-            <Home/>
+            <input type ="text" onChange={fun1} name='name' value={data.name}></input>
+            <br></br>
+            <br></br>
+            <input type='email' onChange={fun1} name='email ' value={data.email} ></input>
+            <br></br>
+            <br></br>
+            <input type='passWord' onChange={fun1} name='passWord ' value={data.passWord} ></input>
         </div>
     )
 }
