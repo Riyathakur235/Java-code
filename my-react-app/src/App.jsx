@@ -1,7 +1,7 @@
-import { useState } from 'react'
+//import { useReducer, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+//import './App.css'
 //npm import React, { useState } from 'react'
 
 // const App = () => {
@@ -51,29 +51,79 @@ import './App.css'
 // let {id}=obj
 
 
+// import React from 'react'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// import { Route, Routes } from 'react-router-dom'
+// import Home from './Home'
+// // http://localhost:5173/
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <SignUp/>
+//       <Login/> */}
+//       <Routes>
+//         <Route   path='/'    element={<Home/>}/>
+//         <Route   path='/signup'    element={<SignUp/>}/>
+//         <Route   path='/login'    element={<Login/>}/>
+
+
+//       </Routes>
+//     </div>
+//   )
+// }
+
+
+
+// const App = ()=>{
+//   function reduser (count,action){
+//    if(action.type=="inc"){
+//     return count+1;
+//    }
+//    else if(action.type=="d"){
+//     return count-1;
+//    }else{
+//     return count;
+//    }
+//   }
+//   let[count,dispatch]= useReducer(reduser,0)
+//   return(
+//     <div>
+//       <h2></h2> 
+//       <button onClick={()=>dispatch({type:"inc"})}>++</button>
+//       <button onClick={()=>dispatch({type:"d"})}>--</button>
+//     </div>
+//   )
+// }
+
+//colour
+// const App=()=>{
+//   function reduser(color,action){
+//     if(action.type=="r"){
+//       return 'red'
+//     }
+//     else if(action.type='g'){
+//       return 'green'
+//     }
+//   }
+//   let[color,dispatch]=useReducer(reduser,'white')
+//   return(
+//     <div style={{backgroundColor}}>
+//        <button onClick={()=>dispatch({type:'r'})}>red</button>
+//         <button onClick={()=>dispatch({type:'r'})}>green</button>
+//     </div>
+//   )
+// }
+
+
 import React from 'react'
-import SignUp from './SignUp'
-import Login from './Login'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
-// http://localhost:5173/
-const App = () => {
-  return (
+import Home from '/Home'
+const App =()=>{
+  let user="hello"
+  return(
     <div>
-      {/* <SignUp/>
-      <Login/> */}
-      <Routes>
-        <Route   path='/'    element={<Home/>}/>
-        <Route   path='/signup'    element={<SignUp/>}/>
-        <Route   path='/login'    element={<Login/>}/>
-
-
-      </Routes>
+      <Home data={user}/>
     </div>
   )
 }
-
-
-
-
 export default App
