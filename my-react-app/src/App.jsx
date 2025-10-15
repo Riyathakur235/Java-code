@@ -50,36 +50,36 @@ import viteLogo from '/vite.svg'
 // }
 // let {id}=obj
 
+//Api
+// import React,{useState} from 'react'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// import { Route, Routes } from 'react-router-dom'
+// import Home from './Home'
+// import AddToCart from './AddToCart'
+// // http://localhost:5173/
+// const App = () => {
+//   let [apiData,SetData]=     useState([])
+//   let [filteredddData,SetFilteredddData]=     useState([])
 
-import React,{useState} from 'react'
-import SignUp from './SignUp'
-import Login from './Login'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
-import AddToCart from './AddToCart'
-// http://localhost:5173/
-const App = () => {
-  let [apiData,SetData]=     useState([])
-  let [filteredddData,SetFilteredddData]=     useState([])
-
-    let [cart,SetCart]=    useState([])
-    console.log(cart,"h=dekhooooo");
-  return (
-    <div>
-      {/* <SignUp/>
-      <Login/> */}
-      <Routes>
-        <Route   path='/'    element={<Home cart={cart} SetCart={SetCart} apiData={apiData} SetData={SetData} filteredddData={filteredddData}    SetFilteredddData={SetFilteredddData}  />} />
-        <Route   path='/signup'    element={<SignUp/>}/>
-        <Route   path='/login'    element={<Login/>}/>
-        <Route   path='/cart'    element={<AddToCart cart={cart}/>}/>
+//     let [cart,SetCart]=    useState([])
+//     console.log(cart,"h=dekhooooo");
+//   return (
+//     <div>
+//       {/* <SignUp/>
+//       <Login/> */}
+//       <Routes>
+//         <Route   path='/'    element={<Home cart={cart} SetCart={SetCart} apiData={apiData} SetData={SetData} filteredddData={filteredddData}    SetFilteredddData={SetFilteredddData}  />} />
+//         <Route   path='/signup'    element={<SignUp/>}/>
+//         <Route   path='/login'    element={<Login/>}/>
+//         <Route   path='/cart'    element={<AddToCart cart={cart}/>}/>
 
 
-      </Routes>
-    </div>
-  )
-}
-export default App
+//       </Routes>
+//     </div>
+//   )
+// }
+// export default App
 
 
 
@@ -135,3 +135,14 @@ export default App
 //   )
 // }
 //export default App
+  
+
+import React from 'react'
+import Home from './Home'
+const App =()=>{
+   return(
+    <div>
+      <Home/>
+    </div>
+   )
+}
