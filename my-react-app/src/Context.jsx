@@ -1,17 +1,17 @@
 import { useEffect, createContext, useReducer } from "react";
 
-let Context=createContext
+let Context=createContext ()
 
 
 export default Context
 
 const ContextP = ({children})=>{
     let data={
-        apiData:{},
-        cart:{}
+        apiData:[],
+        cart:[]
     }
 
-    function reduser(apiData,action){
+    function reduser(state,action){
         
         if(action.type=="FETCH_DATA"){
             return{
@@ -21,17 +21,21 @@ const ContextP = ({children})=>{
     }
 useEffect(()=>{
     fetch("https://dummyjson.com/recipes").then((res)=>{
-        return res.json
+        return res.json ()
+    }).then((data)=>{
+          dispatch({type:"FETCH_DATA",payload:data.recipes})
     })
-})
+},[])
 
-let [val,dispatch]=useReducer(reducer,data)
+let [state,dispatch]=useReducer(reduser,data)
 return(
     <div>
-        <Context.Provider>
+        <Context.Provider value={{state,dispatch}}>
             {children}
         </Context.Provider>
     </div>
 )
 
 }
+
+export {ContextP}

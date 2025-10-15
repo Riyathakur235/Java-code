@@ -1,6 +1,7 @@
 //import { useReducer, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import React from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 //import './App.css'
 //npm import React, { useState } from 'react'
 
@@ -135,14 +136,16 @@ import viteLogo from '/vite.svg'
 //   )
 // }
 //export default App
-  
+
 
 import React from 'react'
-import Home from './Home'
-const App =()=>{
-   return(
+import Home from'./Home'
+
+const App = ()=>{
+  return(
     <div>
       <Home/>
     </div>
-   )
+  )
 }
+export default App
