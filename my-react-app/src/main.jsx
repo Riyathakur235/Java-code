@@ -7,11 +7,11 @@ import {BrowserRouter}  from 'react-router-dom'
 import  { ContextP } from './Context.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <BrowserRouter>    */}
+    <BrowserRouter>   
     <ContextP>
     <App />
     </ContextP>
-    {/* </BrowserRouter> */}
+    </BrowserRouter>
   </StrictMode>,
 )
 

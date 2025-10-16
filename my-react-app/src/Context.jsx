@@ -18,7 +18,11 @@ const ContextP = ({children})=>{
                 apiData:action.payload
             }
         }
-    }
+        else if(action.type=="cart"){
+           state,cart[action.payload]
+        }   
+     }
+    
 useEffect(()=>{
     fetch("https://dummyjson.com/recipes").then((res)=>{
         return res.json ()
