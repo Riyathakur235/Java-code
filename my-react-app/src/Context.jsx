@@ -1,11 +1,10 @@
-import { useEffect, createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
-let Context=createContext ()
-
+let   Context=    createContext()
 
 export default Context
 
-const ContextP = ({children})=>{
+const ContextP=({children})=>{
     let data={
         apiData:[],
         cart:[]
@@ -15,31 +14,36 @@ const ContextP = ({children})=>{
         
         if(action.type=="FETCH_DATA"){
             return{
-                apiData:action.payload
+               apiData:action.payload
             }
+
         }
         else if(action.type=="cart"){
-           state,cart[action.payload]
-        }   
-     }
-    
-useEffect(()=>{
-    fetch("https://dummyjson.com/recipes").then((res)=>{
-        return res.json ()
-    }).then((data)=>{
-          dispatch({type:"FETCH_DATA",payload:data.recipes})
-    })
-},[])
+            return {
+                ...state,cart:[action.payload]
+            }
+        }
 
-let [state,dispatch]=useReducer(reduser,data)
-return(
-    <div>
+    }
+
+    useEffect(()=>{
+        fetch("https://dummyjson.com/recipes").then((res)=>{
+            return res.json()
+
+        }).then((data)=>{
+            dispatch({type:"FETCH_DATA",payload:data.recipes})
+
+        })
+    },[])
+
+    let [state, dispatch]=    useReducer(reduser,data)
+    return(<div>
         <Context.Provider value={{state,dispatch}}>
             {children}
         </Context.Provider>
-    </div>
-)
 
+    </div>)
 }
+
 
 export {ContextP}
