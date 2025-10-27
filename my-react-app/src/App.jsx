@@ -137,24 +137,55 @@
 // }
 //export default App
 
+//recipes
+// import React from 'react'
+// import Home from'./Home'
+// import { Route,Routes } from 'react-router-dom'
+// import AddToCart from './AddToCart'
+// import OnePage from './OnePage'
 
-import React from 'react'
-import Home from'./Home'
-import { Route,Routes } from 'react-router-dom'
-import AddToCart from './AddToCart'
-import OnePage from './OnePage'
-
-const App = ()=>{
-  return(
-    <div>
+// const App = ()=>{
+//   return(
+//     <div>
       
-       <Routes>
-        <Route   path='/'    element={<Home/>} />
+//        <Routes>
+//         <Route   path='/'    element={<Home/>} />
 
-        <Route   path='/cart'    element={<AddToCart />}/>
-        <Route path='/onepage/:id' element={<OnePage/>}></Route>
+//         <Route   path='/cart'    element={<AddToCart />}/>
+//         <Route path='/onepage/:id' element={<OnePage/>}></Route>
 
-      </Routes>
+//       </Routes>
+//     </div>
+//   )
+// }
+
+//todo
+import React, { useState } from 'react'
+
+const App = () => {
+    let[input,SetInput] = useState('')
+    let[data,SetData] = useState ([])
+    function fun1(e){
+       SetInput(e.target.value)
+
+    }
+
+    function btn(){
+        SetData({...data,input})
+    }
+  return (
+    <div>
+      {<h2>{input}</h2>}
+      {
+        data.map((a)=>{
+          return(<>
+          <li>{a}</li>
+          </>)
+        })
+      }
+
+        <input onChange={fun1} />
+        <button onClick={btn}>click</button>
     </div>
   )
 }
