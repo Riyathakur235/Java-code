@@ -241,6 +241,7 @@ import './App.css'
 // }
 
 import {Link } from 'react-router-dom'
+
 const Home = ()=>{
   let {dispatch,state}= useContext(Context)
   //console.log(dispatch,state,"hii");
@@ -255,7 +256,7 @@ const Home = ()=>{
    {
         state.apiData.map((a,index)=>{
            return(<>
-           <div id='card'>
+           <div id='card'  >
           <img  src={a.image}/>
              <p>{a.name}</p>
             <p> Rating: {a.rating}</p>        
@@ -267,6 +268,8 @@ const Home = ()=>{
       } 
    </>
    </div>
+
+   
   )
   
 }

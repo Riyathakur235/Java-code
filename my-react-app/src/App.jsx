@@ -142,6 +142,7 @@ import React from 'react'
 import Home from'./Home'
 import { Route,Routes } from 'react-router-dom'
 import AddToCart from './AddToCart'
+import OnePage from './OnePage'
 
 const App = ()=>{
   return(
@@ -151,6 +152,7 @@ const App = ()=>{
         <Route   path='/'    element={<Home/>} />
 
         <Route   path='/cart'    element={<AddToCart />}/>
+        <Route path='/onepage/:id' element={<OnePage/>}></Route>
 
       </Routes>
     </div>
