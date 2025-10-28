@@ -257,7 +257,7 @@ const Home = ()=>{
    {
         state.apiData.map((a,index)=>{
            return(<>
-           <div id='card'  >
+           <div id='card' onClick={()=>newPage(index) } >
           <img  src={a.image}/>
              <p>{a.name}</p>
             <p> Rating: {a.rating}</p>        

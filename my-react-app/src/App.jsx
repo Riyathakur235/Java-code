@@ -138,7 +138,7 @@
 //export default App
 
 //recipes
-// import React from 'react'
+// import React, { useContext } from 'react'
 // import Home from'./Home'
 // import { Route,Routes } from 'react-router-dom'
 // import AddToCart from './AddToCart'
@@ -157,36 +157,55 @@
 //       </Routes>
 //     </div>
 //   )
-// }
+//}
 
 //todo
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// const App = () => {
+//     let[input,SetInput] = useState('')
+//     let[data,SetData] = useState ([])
+//     function fun1(e){
+//        SetInput(e.target.value)
+
+//     }
+
+//     function btn(){
+//         SetData({...data,input})
+//     }
+//   return (
+//     <div>
+//       {<h2>{input}</h2>}
+//       {
+//         data.map((a)=>{
+//           return(<>
+//           <li>{a}</li>
+//           </>)
+//         })
+//       }
+
+//         <input onChange={fun1} />
+//         <button onClick={btn}>click</button>
+//     </div>
+//   )
+// }
+
+
+
+import React, {useState } from 'react'
 
 const App = () => {
-    let[input,SetInput] = useState('')
-    let[data,SetData] = useState ([])
-    function fun1(e){
-       SetInput(e.target.value)
-
-    }
-
-    function btn(){
-        SetData({...data,input})
-    }
+  let[count,SetCount]=useState(0)
+ function fun1(){
+   
+ }
   return (
     <div>
-      {<h2>{input}</h2>}
-      {
-        data.map((a)=>{
-          return(<>
-          <li>{a}</li>
-          </>)
-        })
-      }
-
-        <input onChange={fun1} />
-        <button onClick={btn}>click</button>
+      <h1>{count}</h1>
+      <button onClick={fun1} >start</button>
+      <button >Stop</button>
     </div>
   )
 }
-export default App
+
+ export default App
