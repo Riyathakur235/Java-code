@@ -192,18 +192,37 @@
 
 
 
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 
 const App = () => {
-  let[count,SetCount]=useState(0)
- function fun1(){
-   
- }
+  const[time,SetTime]=useState(0)
+  const[isRunning,SetIsRunning]=useState(false)
+  
+useEffect(()=>{
+  let timer;
+  if(isRunning){
+    timer=setInterval(()=>{
+      SetTime((prev)=>prev+1)
+    },100)
+  } else {
+    clearInterval(timer);
+  }
+  return()=>clearInterval(timer)
+},[isRunning])
+
+const formatTime=(time)=>{
+  const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
+
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={fun1} >start</button>
-      <button >Stop</button>
+    <div style={{textAlign:"center",marginTop:"50px"}}>
+      <h1>Stopwatch</h1>
+      <h2>{formatTime(time)}</h2>
+      <button onClick={()=>SetIsRunning(true)} >start</button>
+      <button onClick={()=>SetIsRunning(false)}>Stop</button>
+      <button onClick={()=>SetIsRunning(0)}>Reset</button>
     </div>
   )
 }
