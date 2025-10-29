@@ -190,41 +190,68 @@
 //   )
 // }
 
+//stopwatch 
 
+// import React, {useEffect, useState } from 'react'
 
-import React, {useEffect, useState } from 'react'
+// const App = () => {
+//   const[time,SetTime]=useState(0)
+//   const[isRunning,SetIsRunning]=useState(false)
+  
+// useEffect(()=>{
+//   let timer;
+//   if(isRunning){
+//     timer=setInterval(()=>{
+//       SetTime((prev)=>prev+1)
+//     },100)
+//   } else {
+//     clearInterval(timer);
+//   }
+//   return()=>clearInterval(timer)
+// },[isRunning])
+
+// const formatTime=(time)=>{
+//   const minutes = Math.floor(time / 60);
+//     const seconds = time % 60;
+//     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+//   };
+
+//   return (
+//     <div style={{textAlign:"center",marginTop:"50px"}}>
+//       <h1>Stopwatch</h1>
+//       <h2>{formatTime(time)}</h2>
+//       <button onClick={()=>SetIsRunning(true)} >start</button>
+//       <button onClick={()=>SetIsRunning(false)}>Stop</button>
+//       <button onClick={()=>SetIsRunning(0)}>Reset</button>
+//     </div>
+//   )
+// }
+   
+
+import React, { useReducer } from 'react'
 
 const App = () => {
-  const[time,SetTime]=useState(0)
-  const[isRunning,SetIsRunning]=useState(false)
   
-useEffect(()=>{
-  let timer;
-  if(isRunning){
-    timer=setInterval(()=>{
-      SetTime((prev)=>prev+1)
-    },100)
-  } else {
-    clearInterval(timer);
-  }
-  return()=>clearInterval(timer)
-},[isRunning])
-
-const formatTime=(time)=>{
-  const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-  };
-
+  function reducer(count,action){
+    if(action.type=="++"){
+      return count+1;
+    }else if(action.type=="--"){
+      return count-1;
+  }else if(action.type=="reset"){
+      return 0
+  }else
+  return count 
+ }
+  let[count,dispatch]=useReducer(reducer,0)
   return (
-    <div style={{textAlign:"center",marginTop:"50px"}}>
-      <h1>Stopwatch</h1>
-      <h2>{formatTime(time)}</h2>
-      <button onClick={()=>SetIsRunning(true)} >start</button>
-      <button onClick={()=>SetIsRunning(false)}>Stop</button>
-      <button onClick={()=>SetIsRunning(0)}>Reset</button>
+    <div>
+      <h1>{count}</h1>
+      <button onClick={()=>dispatch({type:"++"})}>++</button>
+      <button onClick={()=>dispatch({type:"--"})}>--</button>
+      <button onClick={()=>dispatch({type:"reset"})}>Reset</button>
     </div>
   )
-}
 
- export default App
+}
+export default App
+
