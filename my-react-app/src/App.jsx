@@ -138,26 +138,26 @@
 //export default App
 
 //recipes
-// import React, { useContext } from 'react'
-// import Home from'./Home'
-// import { Route,Routes } from 'react-router-dom'
-// import AddToCart from './AddToCart'
-// import OnePage from './OnePage'
+import React, { useContext } from 'react'
+import Home from'./Home'
+import { Route,Routes } from 'react-router-dom'
+import AddToCart from './AddToCart'
+import OnePage from './OnePage'
 
-// const App = ()=>{
-//   return(
-//     <div>
+const App = ()=>{
+  return(
+    <div>
       
-//        <Routes>
-//         <Route   path='/'    element={<Home/>} />
+       <Routes>
+        <Route   path='/'    element={<Home/>} />
 
-//         <Route   path='/cart'    element={<AddToCart />}/>
-//         <Route path='/onepage/:id' element={<OnePage/>}></Route>
+        <Route   path='/cart'    element={<AddToCart />}/>
+        <Route path='/onepage/:id' element={<OnePage/>}></Route>
 
-//       </Routes>
-//     </div>
-//   )
-//}
+      </Routes>
+    </div>
+  )
+}
 
 //todo
 // import React, { useState } from 'react'
@@ -228,30 +228,29 @@
 // }
    
 
-import React, { useReducer } from 'react'
-
-const App = () => {
+// 
+// const App = () => {
   
-  function reducer(count,action){
-    if(action.type=="++"){
-      return count+1;
-    }else if(action.type=="--"){
-      return count-1;
-  }else if(action.type=="reset"){
-      return 0
-  }else
-  return count 
- }
-  let[count,dispatch]=useReducer(reducer,0)
-  return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={()=>dispatch({type:"++"})}>++</button>
-      <button onClick={()=>dispatch({type:"--"})}>--</button>
-      <button onClick={()=>dispatch({type:"reset"})}>Reset</button>
-    </div>
-  )
+//   function reducer(count,action){
+//     if(action.type=="++"){
+//       return count+1;
+//     }else if(action.type=="--"){
+//       return count-1;
+//   }else if(action.type=="reset"){
+//       return 0
+//   }else
+//   return count 
+//  }
+//   let[count,dispatch]=useReducer(reducer,0)
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={()=>dispatch({type:"++"})}>++</button>
+//       <button onClick={()=>dispatch({type:"--"})}>--</button>
+//       <button onClick={()=>dispatch({type:"reset"})}>Reset</button>
+//     </div>
+//   )
 
-}
+// }
 export default App
 

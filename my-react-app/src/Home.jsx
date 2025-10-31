@@ -1,7 +1,7 @@
 // // import React, { useState } from 'react'
 
-import { useContext } from "react"
-import Context from "./Context"
+// import { useContext } from "react"
+// import Context from "./Context"
 import './App.css'
 
 // // const Home = () => {
@@ -101,112 +101,112 @@ import './App.css'
 // // https://dummyjson.com/recipes
 //Api
 
-// import React, { useEffect, useState } from 'react'
-// import './App.css'
-// const Home = () => {
+import React, { useEffect, useState } from 'react'
+import './App.css'
+const Home = () => {
 
 
-//       let arr=[1,2,3,4,5]
-//       let arr1=[6,7,8,...arr]
-//       console.log(arr1,"rrrr");
+      let arr=[1,2,3,4,5]
+      let arr1=[6,7,8,...arr]
+      console.log(arr1,"rrrr");
       
 
-//      let [apiData,SetData]=     useState([])
-//      let [filteredddData,SetFilteredddData]=     useState([])
+     let [apiData,SetData]=     useState([])
+     let [filteredddData,SetFilteredddData]=     useState([])
 
-//      console.log("heheheheh");
+     console.log("heheheheh");
      
-//   useEffect(()=>{
-//     fetch("https://dummyjson.com/recipes").then((res)=>{
-//       return res.json()
+  useEffect(()=>{
+    fetch("https://dummyjson.com/recipes").then((res)=>{
+      return res.json()
 
-//     }).then((data)=>{
-//       console.log(data.recipes);
-//       SetData(data.recipes)
-//       SetFilteredddData(data.recipes)
+    }).then((data)=>{
+      console.log(data.recipes);
+      SetData(data.recipes)
+      SetFilteredddData(data.recipes)
       
 
-//     })
+    })
 
-//   },[])
+  },[])
 
-//   function deletee(id){
-//     // console.log(id);
-//   let newArrr=   apiData.filter((a,b)=>{
-//       return  b!==id
+  function deletee(id){
+    // console.log(id);
+  let newArrr=   apiData.filter((a,b)=>{
+      return  b!==id
 
-//     })
-//     SetData(newArrr)
+    })
+    SetData(newArrr)
 
     
-//   }
-//   function fun1(){
-//    let Data1=  [...apiData].sort((a,b)=>{
-//       return a.rating-b.rating
+  }
+  function fun1(){
+   let Data1=  [...apiData].sort((a,b)=>{
+      return a.rating-b.rating
       
-//     })
-//     console.log(Data1,"SORTEDDDDD");
+    })
+    console.log(Data1,"SORTEDDDDD");
     
-//     SetData(Data1)
+    SetData(Data1)
 
 
-//   }
-//   function fun2(){
-//     let Data1=  [...apiData].sort((a,b)=>{
-//       return b.rating-a.rating
+  }
+  function fun2(){
+    let Data1=  [...apiData].sort((a,b)=>{
+      return b.rating-a.rating
       
-//     })
-//     console.log(Data1,"SORTEDDDDD");
+    })
+    console.log(Data1,"SORTEDDDDD");
     
-//     SetData(Data1)
+    SetData(Data1)
 
-//   }
+  }
 
-//   function lunch(searchValue){
-//    let filtereddData=   apiData.filter((a)=>{
-//       return a.mealType[0]==searchValue
+  function lunch(searchValue){
+   let filtereddData=   apiData.filter((a)=>{
+      return a.mealType[0]==searchValue
 
-//     })
-//     SetFilteredddData(filtereddData)
+    })
+    SetFilteredddData(filtereddData)
 
-//   }
+  }
 
-//   function dinner(a){
-//     let filtereddData=   apiData.filter((a)=>{
-//       return a.mealType[0]==a
+  function dinner(a){
+    let filtereddData=   apiData.filter((a)=>{
+      return a.mealType[0]==a
 
-//     })
-//     SetFilteredddData(filtereddData)
-
-
-//   }
-//   return (
-//     <div>
-//       <button onClick={fun1}>acs</button>
-//       <button onClick={fun2}>des</button>
-//       <button onClick={()=>lunch("Lunch")}>lunch</button>
-//       <button onClick={()=>dinner("Dinner")}>dinner</button>
-//       <button>breakfast</button>
+    })
+    SetFilteredddData(filtereddData)
 
 
-//       {
-//         filteredddData.map((a,index)=>{
-//           return(<>
-//           <div id='card'>
-//           <img  src={a.image}/>
-//             <p>{a.name}</p>
-//             <p> Rating: {a.rating}</p>
-//             <button  onClick={()=>deletee(index)}>delet</button>
+  }
+  return (
+    <div>
+      <button onClick={fun1}>acs</button>
+      <button onClick={fun2}>des</button>
+      <button onClick={()=>lunch("Lunch")}>lunch</button>
+      <button onClick={()=>dinner("Dinner")}>dinner</button>
+      <button>breakfast</button>
+
+
+      {
+        filteredddData.map((a,index)=>{
+          return(<>
+          <div id='card'>
+          <img  src={a.image}/>
+            <p>{a.name}</p>
+            <p> Rating: {a.rating}</p>
+            <button  onClick={()=>deletee(index)}>delet</button>
            
-//           </div>
-//           </>)
-//         })
-//       }
-//     </div>
-//   )
-// }
+          </div>
+          </>)
+        })
+      }
+    </div>
+  )
+}
 
-// export default Home
+export default Home
 
 
 //product task
@@ -241,37 +241,37 @@ import './App.css'
 //   )
 // }
 
-import {Link } from 'react-router-dom'
+// import {Link } from 'react-router-dom'
 
-const Home = ()=>{
-  let {dispatch,state}= useContext(Context)
-  //console.log(dispatch,state,"hii");
-  return(
-     <div> 
-      <div> 
-        <Link to={'/cart'}> 
-    <button>Cart</button> 
-    </Link> 
-    </div> 
-   <>
-   {
-        state.apiData.map((a,index)=>{
-           return(<>
-           <div id='card' onClick={()=>newPage(index) } >
-          <img  src={a.image}/>
-             <p>{a.name}</p>
-            <p> Rating: {a.rating}</p>        
-              <button onClick={()=>dispatch({type:"cart",payload:a})} >add </button>
+// const Home = ()=>{
+//   let {dispatch,state}= useContext(Context)
+//   //console.log(dispatch,state,"hii");
+//   return(
+//      <div> 
+//       <div> 
+//         <Link to={'/cart'}> 
+//     <button>Cart</button> 
+//     </Link> 
+//     </div> 
+//    <>
+//    {
+//         state.apiData.map((a,index)=>{
+//            return(<>
+//            <div id='card' onClick={()=>newPage(index) } >
+//           <img  src={a.image}/>
+//              <p>{a.name}</p>
+//             <p> Rating: {a.rating}</p>        
+//               <button onClick={()=>dispatch({type:"cart",payload:a})} >add </button>
            
-          </div>
-          </>)
-         })
-      } 
-   </>
-   </div>
+//           </div>
+//           </>)
+//          })
+//       } 
+//    </>
+//    </div>
 
    
-  )
+//   )
   
-}
-export default Home
+// }
+// export default Home
