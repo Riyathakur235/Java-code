@@ -255,21 +255,72 @@
 
 
 
-import React, { useMemo, useState } from 'react'
+// import React, { useMemo, useState } from 'react'
+
+// const App = () => {
+//   let [data,SetData]=useState(0)
+//   const res= useMemo(()=>{
+//     console.log("Calculation");
+//     let total=0
+//    for(let i =0;i<=100000000;i++){
+//     total+=i
+//    }  
+//    return total;  
+//   },[]);
+//   return (
+//     <div>
+//       <h2>{data}</h2>
+//       <h2>{res}</h2>
+//       <button onClick={()=>SetData(data+1)}>click</button>
+//     </div>
+//   )
+// }
+//export default App
+
+// import React, { useEffect, useRef, useState } from 'react'
+
+// const App = () => {
+//   let[input,SetInput]=useState("")
+//  // let[data,SetData]=useState()
+//  let count=useRef(0)
+//  console.log(count,"kya");
+ 
+//   useEffect(()=>{
+//    count.current+=1
+//   })
+//   return (
+//     <div>
+//       <h1>{count.current}</h1>
+//       <input type='text' onChange={(e)=>SetInput(e.target.value)}></input>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, {memo ,useState } from 'react'
 
 const App = () => {
   let [data,SetData]=useState(0)
-  const res= useMemo(()=>{
-    
-  })
   return (
     <div>
       <h2>{data}</h2>
-      <h2>{res}</h2>
-      <button onClick={()=>SetData(data+1)}>click</button>
+     <button onClick={()=>SetData(data+1)}>click</button>
+      <Home/>
     </div>
   )
 }
 
-export default App
+const Home = memo(()=>{
+console.log("hello");
 
+  return (
+    <div>
+      <div>home file</div>
+    </div>
+  )
+
+})
+  export {Home}
+export default App
