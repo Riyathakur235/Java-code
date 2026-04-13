@@ -17,7 +17,7 @@ let random=generateRandomCell()
       draw()
       update()
 
-    },100)
+    },200)
        document.addEventListener("keydown",(e)=>{
         // console.log("helllo");
         // console.log(e);
@@ -88,21 +88,16 @@ let random=generateRandomCell()
               }
             }
      
-            snakeCells.push([newX,newY])
+          snakeCells.push([newX,newY])
        
             if(newX==random[0] && newY== random[1]){
               random=generateRandomCell()
               score+=1
-            }
+          }
             else{
               snakeCells.shift()
 
-            }
-        
-         
-           
-
-
+        }
     }
 
     function generateRandomCell() {
@@ -113,14 +108,5 @@ let random=generateRandomCell()
 }
 
 console.log(generateRandomCell());
-
-
-
-
-
-
-
-
-
         //  console.log( Math.floor(Math.random()*500)   );
        
