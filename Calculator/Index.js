@@ -1,17 +1,21 @@
-let inp=document.querySelector("input")
- let button=document.querySelectorAll("button")
- //console.log(button);
-  for(let btn of button){
-    btn.addEventListener("click",()=>{
-        //console.log("hii")
-        let txt=btn.innerText
-        if(txt="C"){
-         inp.value=" "
+function append(value) {
+    document.getElementById("display").value += value;
+}
 
-        }else if(txt=="="){
-          inp.value= eval(inp.value)
-        }else{
-            inp.value=inp.value+txt
-        }
-    })
-  }
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+
+function deleteLast() {
+    let current = document.getElementById("display").value;
+    document.getElementById("display").value = current.slice(0, -1);
+}
+
+function calculate() {
+    try {
+        let result = eval(document.getElementById("display").value);
+        document.getElementById("display").value = result;
+    } catch {
+        document.getElementById("display").value = "Error";
+    }
+}
