@@ -233,7 +233,7 @@ import './App.css'
 //   )
 // }
 
-// import React from "react"
+import React from "react"
 // import Home from '/Home'
 // const Home=(data)=>{
 //   return (
@@ -241,51 +241,51 @@ import './App.css'
 //   )
 // }
 
-// import {Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
-// const Home = ()=>{
-//   let {dispatch,state}= useContext(Context)
-//   //console.log(dispatch,state,"hii");
-//   return(
-//      <div> 
-//       <div> 
-//         <Link to={'/cart'}> 
-//     <button>Cart</button> 
-//     </Link> 
-//     </div> 
-//    <>
-//    {
-//         state.apiData.map((a,index)=>{
-//            return(<>
-//            <div id='card' onClick={()=>newPage(index) } >
-//           <img  src={a.image}/>
-//              <p>{a.name}</p>
-//             <p> Rating: {a.rating}</p>        
-//               <button onClick={()=>dispatch({type:"cart",payload:a})} >add </button>
+const Home = ()=>{
+  let {dispatch,state}= useContext(Context)
+  //console.log(dispatch,state,"hii");
+  return(
+     <div> 
+      <div> 
+        <Link to={'/cart'}> 
+    <button>Cart</button> 
+    </Link> 
+    </div> 
+   <>
+   {
+        state.apiData.map((a,index)=>{
+           return(<>
+           <div id='card' onClick={()=>newPage(index) } >
+          <img  src={a.image}/>
+             <p>{a.name}</p>
+            <p> Rating: {a.rating}</p>        
+              <button onClick={()=>dispatch({type:"cart",payload:a})} >add </button>
            
-//           </div>
-//           </>)
-//          })
-//       } 
-//    </>
-//    </div>
+          </div>
+          </>)
+         })
+      } 
+   </>
+   </div>
 
    
-//   )
-  
-// }
-// export default Home
-
-
-import React from 'react'
-
-const Home = () => {
-  return (
-    <div>
-      
-    </div>
   )
+  
 }
-
 export default Home
+
+
+// import React from 'react'
+
+// const Home = () => {
+//   return (
+//     <div>
+      
+//     </div>
+//   )
+// }
+
+// export default Home
 

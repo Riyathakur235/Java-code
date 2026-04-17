@@ -277,50 +277,50 @@
 // }
 //export default App
 
-// import React, { useEffect, useRef, useState } from 'react'
-
-// const App = () => {
-//   let[input,SetInput]=useState("")
-//  // let[data,SetData]=useState()
-//  let count=useRef(0)
-//  console.log(count,"kya");
- 
-//   useEffect(()=>{
-//    count.current+=1
-//   })
-//   return (
-//     <div>
-//       <h1>{count.current}</h1>
-//       <input type='text' onChange={(e)=>SetInput(e.target.value)}></input>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-import React, {memo ,useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const App = () => {
-  let [data,SetData]=useState(0)
+  let[input,SetInput]=useState("")
+ // let[data,SetData]=useState()
+ let count=useRef(0)
+ console.log(count,"kya");
+ 
+  useEffect(()=>{
+   count.current+=1
+  })
   return (
     <div>
-      <h2>{data}</h2>
-     <button onClick={()=>SetData(data+1)}>click</button>
-      <Home/>
+      <h1>{count.current}</h1>
+      <input type='text' onChange={(e)=>SetInput(e.target.value)}></input>
     </div>
   )
 }
 
-const Home = memo(()=>{
-console.log("hello");
-
-  return (
-    <div>
-      <div>home file</div>
-    </div>
-  )
-
-})
-  export {Home}
 export default App
+
+
+// import React, {memo ,useState } from 'react'
+
+// const App = () => {
+//   let [data,SetData]=useState(0)
+//   return (
+//     <div>
+//       <h2>{data}</h2>
+//      <button onClick={()=>SetData(data+1)}>click</button>
+//       <Home/>
+//     </div>
+//   )
+// }
+
+// const Home = memo(()=>{
+// console.log("hello");
+
+//   return (
+//     <div>
+//       <div>home file</div>
+//     </div>
+//   )
+
+// })
+//   export {Home}
+// export default App
